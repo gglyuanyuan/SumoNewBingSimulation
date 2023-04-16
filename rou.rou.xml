@@ -1,6 +1,6 @@
 <routes> 
-    <vType id="emergency" accel=“3” decel=“5” sigma=“0.5” length=“5” minGap=“2.5” maxSpeed=“40”/> 
-    <vType id=“social” accel=“2” decel=“4” sigma=“0.5” length=“5” minGap=“2.5” maxSpeed=“30”/>
+    <vType id="emergency" accel="3" decel="5" sigma="0.5" length="5" minGap="2.5" maxSpeed="40"/> 
+    <vType id="social" accel="2" decel="4" sigma="0.5" length="5" minGap="2.5" maxSpeed="30"/>
     <route id="east_west" edges="1 2 3"/>
     <!-- 增加了应急车辆的数量和出发时间间隔 -->
     <flow id="emergency_flow" type="emergency" route="east_west" begin="0" end="1000" period="100" departLane="0" departPos="0" departSpeed="-1"/>
