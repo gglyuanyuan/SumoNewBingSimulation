@@ -3,8 +3,8 @@
     <vType id="social" accel="2" decel="4" sigma="0.5" length="5" minGap="2.5" maxSpeed="30"/>
     <route id="east_west" edges="e1"/>
     <!-- 增加了应急车辆的数量和出发时间间隔 -->
-    <flow id="emergency_flow" type="emergency" route="east_west" begin="0" end="1000" period="100" departLane="0" departPos="0" departSpeed="-1"/>
+    <flow id="emergency_flow" type="emergency" route="east_west" begin="0" end="1000" period="100" departLane="0" departPos="0" departSpeed="random"/>
     <!-- 增加了社会车辆的数量和出发时间间隔 -->
-    <flow id="social_flow_1" type="social" route="east_west" begin="10" end="1000" period="50" departLane="1" departPos="-1" departSpeed="-1"/>
-    <flow id="social_flow_2" type="social" route="east_west" begin="20" end="1000" period="50" departLane="2" departPos="-1" departSpeed="-1"/>
+    <flow id="social_flow_1" type="social" route="east_west" begin="10" end="1000" period="50" departLane="1" departPos="-1" departSpeed="random"/>
+    <flow id="social_flow_2" type="social" route="east_west" begin="20" end="1000" period="50" departLane="2" departPos="-1" departSpeed="random"/>
 </routes>
