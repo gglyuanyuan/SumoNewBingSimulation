@@ -1,0 +1,11 @@
+<net version="1.0">
+    <location netOffset="0.00,0.00" convBoundary="0.00,0.00,5000.00,3.75" origBoundary="0.00,0.00,5000.00,3.75" projParameter="!"/>
+    <edge id="e1" from="n1" to="n2" priority="75" type="highway">
+        <lane id="e1_0" index="0" speed="33.33" length="5000.00" width="3.75" shape="-3.75,-3.75 -3.75,-5003.75"/>
+        <lane id="e1_1" index="1" speed="33.33" length="5000.00" width="3.75" shape="0,-3.75 0,-5003.75"/>
+        <lane id="e1_2" index="2" speed="33.33" length="5000.00" width="3.75" shape="3.75,-3.75 3.75,-5003.75"/>
+    </edge> 
+    <junction id="n1" type="dead_end" x="-3.75" y="-3.75"/>
+    <junction id="n2" type="dead_end" x="-3.75" y="-5003.75"/>
+    <type id="highway" numLanes="3" speed="33.33"/>
+</net>

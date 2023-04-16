@@ -1,0 +1,13 @@
+<routes>
+    <vType id="emergency" accel="5.0" decel="5.0" sigma="0.5" length="5.0" minGap="2.5" maxSpeed="50"/>
+    <vType id="social" accel="2.5" decel="2.5" sigma="0.5" length="5.0" minGap="2.5"/>
+    <flow id="emergency_flow" type ="emergency" begin ="10" end ="1000" number ="10">
+        <route edges ="e1"/>
+    </flow>
+    <flow id ="social_flow_1"type ="social "begin ="20 "end ="1000 "number ="100 ">
+        <route edges ="e1 "/>
+    </flow>
+    <flow id ="social_flow_2"type ="social "begin ="30 "end ="1000 "number ="100 ">
+        <route edges ="e1 "/>
+    </flow>
+</routes>
