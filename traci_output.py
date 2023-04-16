@@ -3,6 +3,7 @@ import traci
 import matplotlib.pyplot as plt
 import sys
 sys.path.append("D:/Program_WorkApplication/Eclipse/Sumo/tools")
+import pandas as pd
 
 # set the path of sumo binary
 sumoBinary = "sumo-gui"
@@ -77,3 +78,9 @@ for v in all_vehicles:
 
     # save the plot as an image file in the output folder
     plt.savefig(os.path.join(output_folder, f"{v}.png"))
+
+    # create a data frame with the speed, acceleration and position of the vehicle over time
+    df = pd.DataFrame({"speed": speed_dict[v], "acceleration": accel_dict[v], "x": [p[0] for p in pos_dict[v]], "y": [p[1] for p in pos_dict[v]]})
+
+    # save the data frame as a csv file in the output folder
+    df.to_csv(os.path.join(output_folder, f"{v}.csv"), index=False)
