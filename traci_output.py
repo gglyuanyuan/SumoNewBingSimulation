@@ -5,6 +5,11 @@ import sys
 sys.path.append("D:/Program_WorkApplication/Eclipse/Sumo/tools")
 import pandas as pd
 
+# create an output file
+output_file = open("output/output.xml", "w")
+# write the header of the output file
+output_file.write("<fcd-export>\n")
+
 # set the path of sumo binary
 sumoBinary = "sumo-gui"
 sumoCmd = [sumoBinary, "-c", "sumo.cfg"]
@@ -45,6 +50,23 @@ for i in range(1000):
         speed_dict[v].append(speed)
         accel_dict[v].append(accel)
         pos_dict[v].append(pos)
+    
+    # get the current time step
+    time = traci.simulation.getTime()
+    # write the time step to the output file
+    output_file.write("<timestep time=\"%s\">\n" % time)
+    # get all vehicles in the simulation
+    vehicles = traci.vehicle.getIDList()
+    # loop over all vehicles
+    for vehicle in vehicles:
+        # get the vehicle's position, speed, angle, etc.
+        x, y = traci.vehicle.getPosition(vehicle)
+        speed = traci.vehicle.getSpeed(vehicle)
+        angle = traci.vehicle.getAngle(vehicle)
+        # write the vehicle's information to the output file
+        output_file.write("<vehicle id=\"%s\" x=\"%s\" y=\"%s\" speed=\"%s\" angle=\"%s\"/>\n" % (vehicle, x, y, speed, angle))
+    # write the end of the time step to the output file
+    output_file.write("</timestep>\n")
 
 # close the simulation
 traci.close()
@@ -84,3 +106,8 @@ for v in all_vehicles:
 
     # save the data frame as a csv file in the output folder
     df.to_csv(os.path.join(output_folder, f"{v}.csv"), index=False)
+
+# write the end of the output file
+output_file.write("</fcd-export>\n")
+# close the output file
+output_file.close()
