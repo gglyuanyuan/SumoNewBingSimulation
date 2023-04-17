@@ -113,4 +113,4 @@ for v in all_vehicles:
 output_file.write("</fcd-export>\n")
 # close the output file
 output_file.close()
-xml2csv(output.xml,output.csv,header)
+xml2csv(output,output,1)
