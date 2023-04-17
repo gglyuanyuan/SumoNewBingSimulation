@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import sys
 sys.path.append("D:/Program_WorkApplication/Eclipse/Sumo/tools")
 import pandas as pd
-import * from xml2csv
+import xml2csv
 
 
 # create an output file
