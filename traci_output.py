@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import sys
 sys.path.append("D:/Program_WorkApplication/Eclipse/Sumo/tools")
 import pandas as pd
+import * from xml2csv
+
 
 # create an output file
 output_file = open("output/output.xml", "w")
@@ -111,3 +113,4 @@ for v in all_vehicles:
 output_file.write("</fcd-export>\n")
 # close the output file
 output_file.close()
+xml2csv(output.xml,output.csv,header)
